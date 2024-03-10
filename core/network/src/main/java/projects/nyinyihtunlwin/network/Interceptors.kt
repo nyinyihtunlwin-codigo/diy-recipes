@@ -25,7 +25,9 @@ class HttpInterceptor @Inject constructor(
 
         val bodyStr = body?.string().orEmpty()
         if (statusCode != 200) {
-            globalEvent.emit(statusCode, bodyStr)
+            globalEvent.emit(
+                GlobalEvent.Event.Error("Error", bodyStr)
+            )
         }
         return originalResponse.newBuilder()
             .body(bodyStr.toResponseBody(originalResponse.body?.contentType())).build()

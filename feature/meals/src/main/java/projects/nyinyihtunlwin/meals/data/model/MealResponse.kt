@@ -1,4 +1,4 @@
-package projects.nyinyihtunlwin.meals.data.model.response
+package projects.nyinyihtunlwin.meals.data.model
 
 import kotlinx.serialization.Serializable
 
