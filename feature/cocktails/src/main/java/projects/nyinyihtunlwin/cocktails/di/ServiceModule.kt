@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Named
 import javax.inject.Singleton
 import projects.nyinyihtunlwin.cocktails.data.service.CocktailsService
 import retrofit2.Retrofit
@@ -14,6 +15,6 @@ object ServiceModule {
     @Provides
     @Singleton
     fun provideCocktailsService(
-        retrofit: Retrofit
+        @Named("cocktails") retrofit: Retrofit
     ): CocktailsService = retrofit.create(CocktailsService::class.java)
 }
