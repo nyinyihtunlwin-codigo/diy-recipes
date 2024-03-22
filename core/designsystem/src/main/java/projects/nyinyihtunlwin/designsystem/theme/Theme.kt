@@ -2,6 +2,7 @@ package projects.nyinyihtunlwin.designsystem.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.ripple.LocalRippleTheme
 import androidx.compose.material.ripple.RippleAlpha
 import androidx.compose.material.ripple.RippleTheme
@@ -10,6 +11,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
@@ -64,4 +66,8 @@ private object DiyRecipesRippleTheme : RippleTheme {
         Color.Transparent,
         lightTheme = !isSystemInDarkTheme()
     )
+}
+
+val LocalEntryPadding = compositionLocalOf {
+    PaddingValues()
 }
