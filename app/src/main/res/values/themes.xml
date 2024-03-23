@@ -15,7 +15,7 @@
 
     <style name="Theme.DIYRecipes.Starting" parent="Theme.MySplash">
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
-        <item name="windowSplashScreenBackground">#FFFFF9F8</item>
+        <item name="windowSplashScreenBackground">#FFf1ece1</item>
         <item name="postSplashScreenTheme">@style/Theme.DIYRecipes</item>
         <item name="android:windowSplashScreenBehavior" tools:targetApi="tiramisu">icon_preferred
         </item>

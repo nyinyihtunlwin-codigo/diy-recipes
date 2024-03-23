@@ -121,7 +121,7 @@ private fun DiyRecipesNavigationBarItem(
         val color =
             if (selected)
                 Orange
-            else Light_Orange
+            else Orange
         Image(
             painter = painterResource(id = icon), contentDescription = label,
             modifier = Modifier.size(28.dp)
