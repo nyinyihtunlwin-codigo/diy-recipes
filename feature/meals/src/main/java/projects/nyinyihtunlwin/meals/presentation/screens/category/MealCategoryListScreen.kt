@@ -20,7 +20,7 @@ fun MealCategoryListScreen(
 fun MealCategoryListContent() {
     Scaffold(
         topBar = {
-            DiyRecipesToolbar(title = "DIY Recipes")
+            DiyRecipesToolbar(title = "DIY Recipes", subTitle = "Meals")
         }
     ) {
         Column(
