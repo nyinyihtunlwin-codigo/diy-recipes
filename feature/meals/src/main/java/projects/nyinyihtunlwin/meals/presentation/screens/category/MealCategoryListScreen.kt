@@ -131,10 +131,11 @@ fun MealCategoryItem(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(250.dp)
+                .height(240.dp)
         ) {
             AsyncImage(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize()
+                    .padding(bottom = LocalSpacing.current.spaceMedium),
                 model = data.strCategoryThumb,
                 contentDescription = null,
                 contentScale = ContentScale.Fit
