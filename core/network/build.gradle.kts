@@ -40,12 +40,12 @@ android {
     productFlavors {
         create("staging") {
             dimension = flavorDimensions[0]
-            buildConfigField("String", "BASE_MEAL_URL", "\"https://staging-api-express.extraspaceasia.com.sg/\"")
+            buildConfigField("String", "BASE_MEAL_URL", "\"https://www.themealdb.com/\"")
             buildConfigField("String", "BASE_COCKTAILS_URL", "\"https://asia-southeast1-extra-space-express-staging.cloudfunctions.net/\"")
         }
         create("prod") {
             dimension = flavorDimensions[0]
-            buildConfigField("String", "BASE_MEAL_URL", "\"https://www.esexpress.com/\"")
+            buildConfigField("String", "BASE_MEAL_URL", "\"https://www.themealdb.com/\"")
             buildConfigField("String", "BASE_COCKTAILS_URL", "\"https://asia-southeast1-extra-space-express-staging.cloudfunctions.net/\"")
         }
     }

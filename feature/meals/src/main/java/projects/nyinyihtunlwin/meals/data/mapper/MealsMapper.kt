@@ -1,10 +1,29 @@
 package projects.nyinyihtunlwin.meals.data.mapper
 
+import projects.nyinyihtunlwin.meals.data.model.MealCategoryListResponse
+import projects.nyinyihtunlwin.meals.data.model.MealCategoryResponse
 import projects.nyinyihtunlwin.meals.data.model.MealListResponse
 import projects.nyinyihtunlwin.meals.data.model.MealResponse
 import projects.nyinyihtunlwin.meals.domain.model.Meal
+import projects.nyinyihtunlwin.meals.domain.model.MealCategory
+import projects.nyinyihtunlwin.meals.domain.model.MealCategoryListData
 import projects.nyinyihtunlwin.meals.domain.model.MealListData
 
+fun MealCategoryListResponse?.toModel(): MealCategoryListData {
+    return MealCategoryListData(
+        categories = this?.categories.orEmpty().map {
+            it.toModel()
+        })
+}
+
+fun MealCategoryResponse.toModel(): MealCategory {
+    return MealCategory(
+        idCategory = idCategory ?: "",
+        strCategory = strCategory ?: "",
+        strCategoryThumb = strCategoryThumb ?: "",
+        strCategoryDescription = strCategoryDescription ?: ""
+    )
+}
 
 fun MealListResponse?.toModel(): MealListData {
     return MealListData(
