@@ -18,4 +18,8 @@ class MealsRepositoryImpl @Inject constructor(
     override suspend fun getMealsByCategory(category: String): Either<OptionalException, MealListData> {
         return remoteDataSource.getMealsByCategory(category)
     }
+
+    override suspend fun getMealById(id: String): Either<OptionalException, MealListData> {
+        return remoteDataSource.getMealById(id)
+    }
 }

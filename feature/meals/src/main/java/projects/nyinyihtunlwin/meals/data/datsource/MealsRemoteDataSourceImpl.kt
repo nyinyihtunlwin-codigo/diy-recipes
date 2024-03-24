@@ -27,4 +27,12 @@ internal class MealsRemoteDataSourceImpl @Inject constructor(
             data.toModel()
         })
     }
+
+    override suspend fun getMealById(id: String): Either<OptionalException, MealListData> {
+        return handleCall(apiCall = {
+            mealService.getDetailsById(id)
+        }, mapper = { data ->
+            data.toModel()
+        })
+    }
 }

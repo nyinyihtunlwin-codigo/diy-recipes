@@ -6,4 +6,5 @@ import projects.nyinyihtunlwin.common.datastructure.OptionalException
 
 interface CocktailsRepository {
     suspend fun getCocktails(isAlcoholic: Boolean): Either<OptionalException, DrinkListData>
+    suspend fun getCocktailById(id: String): Either<OptionalException, DrinkListData>
 }

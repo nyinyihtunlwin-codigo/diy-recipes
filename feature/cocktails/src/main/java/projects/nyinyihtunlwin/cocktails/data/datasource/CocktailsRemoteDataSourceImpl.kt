@@ -18,4 +18,12 @@ internal class CocktailsRemoteDataSourceImpl @Inject constructor(
             data.toModel()
         })
     }
+
+    override suspend fun getCocktailById(id: String): Either<OptionalException, DrinkListData> {
+        return handleCall(apiCall = {
+            cocktailsService.getDetailsById(id)
+        }, mapper = { data ->
+            data.toModel()
+        })
+    }
 }

@@ -21,9 +21,6 @@ class MealCategoryListViewModel @Inject constructor(
     MealCategoryListUiState(),
     useCaseExecutorProvider
 ) {
-    init {
-        getMealCategories()
-    }
 
     fun getMealCategories() {
         _uiState.update { it.copy(loading = true) }

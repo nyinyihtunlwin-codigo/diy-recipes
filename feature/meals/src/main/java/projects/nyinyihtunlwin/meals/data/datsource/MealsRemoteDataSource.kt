@@ -8,4 +8,5 @@ import projects.nyinyihtunlwin.meals.domain.model.MealListData
 interface MealsRemoteDataSource {
     suspend fun getMealCategories(): Either<OptionalException, MealCategoryListData>
     suspend fun getMealsByCategory(category: String): Either<OptionalException, MealListData>
+    suspend fun getMealById(id: String): Either<OptionalException, MealListData>
 }

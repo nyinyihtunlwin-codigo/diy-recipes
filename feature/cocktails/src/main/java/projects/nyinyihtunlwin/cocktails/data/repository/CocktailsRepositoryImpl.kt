@@ -13,4 +13,7 @@ class CocktailsRepositoryImpl @Inject constructor(
     override suspend fun getCocktails(isAlcoholic: Boolean): Either<OptionalException, DrinkListData> {
         return remoteDataSource.getCocktails(isAlcoholic)
     }
+    override suspend fun getCocktailById(id: String): Either<OptionalException, DrinkListData> {
+        return remoteDataSource.getCocktailById(id)
+    }
 }
