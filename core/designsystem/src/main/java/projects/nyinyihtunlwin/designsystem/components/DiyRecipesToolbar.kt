@@ -95,7 +95,7 @@ fun DiyRecipesToolbar(
                         .padding(spacing.spaceTiny)
                         .constrainAs(subTitleText) {
                             end.linkTo(parent.end)
-                            top.linkTo(parent.top,spacing.spaceXTiny)
+                            top.linkTo(parent.top, spacing.spaceXTiny)
                             bottom.linkTo(parent.bottom)
                         },
                     overflow = TextOverflow.Ellipsis,
@@ -103,9 +103,9 @@ fun DiyRecipesToolbar(
                     color = Orange
                 )
                 Row(
-                    modifier = Modifier.constrainAs(hangs){
-                        start.linkTo(subTitleText.start,spacing.spaceSmall)
-                        end.linkTo(subTitleText.end,spacing.spaceSmall)
+                    modifier = Modifier.constrainAs(hangs) {
+                        start.linkTo(subTitleText.start, spacing.spaceSmall)
+                        end.linkTo(subTitleText.end, spacing.spaceSmall)
                         top.linkTo(subTitleText.bottom)
                         bottom.linkTo(parent.bottom)
                         height = Dimension.fillToConstraints
@@ -119,7 +119,64 @@ fun DiyRecipesToolbar(
             }
         }
     }
+}
 
+@Composable
+fun DiyRecipesToolbarWithAction(
+    modifier: Modifier = Modifier,
+    title: String = "",
+    containerColor: @Composable () -> Color = { Mix_White },
+    onBackPress: () -> Unit = {}
+) {
+    val spacing = LocalSpacing.current
+
+    Surface(
+        color = containerColor()
+    ) {
+        Column {
+            ConstraintLayout(
+                modifier = modifier
+                    .windowInsetsPadding(WindowInsets.statusBars)
+                    .padding(horizontal = spacing.spaceXSmall)
+                    .fillMaxWidth()
+                    .height(56.dp)
+            ) {
+
+                val (
+                    backButton,
+                    titleText,
+                    actionButton
+                ) = createRefs()
+                BackButton(
+                    onBackPress = onBackPress,
+                    tint = Orange,
+                    modifier = Modifier
+                        .bounceClick()
+                        .constrainAs(backButton) {
+                            start.linkTo(parent.start)
+                            top.linkTo(parent.top)
+                            bottom.linkTo(parent.bottom)
+                            height = Dimension.fillToConstraints
+                        }
+                )
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Normal),
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.constrainAs(titleText) {
+                        start.linkTo(backButton.end, spacing.spaceExtraTiny)
+                        end.linkTo(parent.end, spacing.spaceExtraLarge)
+                        top.linkTo(parent.top)
+                        bottom.linkTo(parent.bottom)
+                        width = Dimension.fillToConstraints
+                    },
+                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 1,
+                    color = Orange
+                )
+            }
+        }
+    }
 }
 
 
@@ -129,6 +186,8 @@ fun DiyRecipesToolbarPreview() {
     DiyRecipesTheme {
         Column {
             DiyRecipesToolbar(title = "DIY Recipes", subTitle = "Cocktails")
+            SpacerVer(height = LocalSpacing.current.spaceMedium)
+            DiyRecipesToolbarWithAction(title = "Details", onBackPress = {})
         }
     }
 }

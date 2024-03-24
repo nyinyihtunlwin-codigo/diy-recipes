@@ -3,7 +3,6 @@
 package projects.nyinyihtunlwin.meals.presentation.screens.category
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -60,6 +59,12 @@ fun MealCategoryListScreen(
             viewModel.getMealCategories()
         },
         onCategorySelected = {
+            onEvent(
+                MealCategoryListEvent.MealList(
+                    categoryId = it.idCategory,
+                    categoryName = it.strCategory
+                )
+            )
         })
 }
 
@@ -70,7 +75,6 @@ fun MealCategoryListContent(
     onRefresh: () -> Unit,
     onCategorySelected: (MealCategoryUiModel) -> Unit,
 ) {
-    val spacing = LocalSpacing.current
     val state = rememberPullRefreshState(refreshing = isRefreshing, onRefresh = {
         onRefresh.invoke()
     })
@@ -134,7 +138,8 @@ fun MealCategoryItem(
                 .height(240.dp)
         ) {
             AsyncImage(
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .fillMaxSize()
                     .padding(bottom = LocalSpacing.current.spaceMedium),
                 model = data.strCategoryThumb,
                 contentDescription = null,
@@ -146,7 +151,10 @@ fun MealCategoryItem(
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(end = LocalSpacing.current.spaceSmall, bottom = LocalSpacing.current.spaceSmall)
+                    .padding(
+                        end = LocalSpacing.current.spaceSmall,
+                        bottom = LocalSpacing.current.spaceSmall
+                    )
                     .clip(shape = RoundedCornerShape(topEnd = 12.dp, bottomEnd = 12.dp))
                     .background(Mix_White_50)
                     .padding(LocalSpacing.current.spaceSmall)

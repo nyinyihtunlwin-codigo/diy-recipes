@@ -7,18 +7,22 @@ import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import projects.nyinyihtunlwin.designsystem.theme.DiyRecipesTheme
 import projects.nyinyihtunlwin.meals.presentation.screens.listing.MealListEvent
 import projects.nyinyihtunlwin.meals.presentation.screens.listing.MealListScreen
+
 @Destination
 @Composable
 fun MealList(
+    categoryName: String,
     navigator: DestinationsNavigator,
 ) {
     DiyRecipesTheme {
         MealListScreen(
+            categoryName = categoryName,
             onEvent = {
                 when (it) {
                     is MealListEvent.Exit -> {
                         navigator.navigateUp()
                     }
+
                     else -> {}
                 }
             },
