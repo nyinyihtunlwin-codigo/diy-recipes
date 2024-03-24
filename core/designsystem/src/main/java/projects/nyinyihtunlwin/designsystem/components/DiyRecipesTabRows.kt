@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Divider
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults
@@ -25,7 +23,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import projects.nyinyihtunlwin.designsystem.theme.DiyRecipesTheme
 import projects.nyinyihtunlwin.designsystem.theme.LocalSpacing
-import projects.nyinyihtunlwin.designsystem.theme.Mix_White
 import projects.nyinyihtunlwin.designsystem.theme.Mix_White_50
 import projects.nyinyihtunlwin.designsystem.theme.Orange
 

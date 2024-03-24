@@ -18,7 +18,7 @@ class CocktailListViewModel @Inject constructor(
 ) : BaseViewModel<CocktailListUiState, CocktailListUiEvent>(
     CocktailListUiEvent.Idle, CocktailListUiState(), useCaseExecutorProvider
 ) {
-    private fun getCocktails(isAlcoholic: Boolean) {
+    fun getCocktails(isAlcoholic: Boolean) {
         _uiState.update { it.copy(loading = true) }
         execute(
             useCase = getCocktailsUseCase,
@@ -27,9 +27,15 @@ class CocktailListViewModel @Inject constructor(
             ),
             onSuccess = { drinkListData ->
                 _uiState.update {
-                    it.copy(
-                        cocktails = drinkListData.drinks.map { drink -> drink.toUiModel() }
-                    )
+                    if(isAlcoholic){
+                        it.copy(
+                            alcoholicCocktails = drinkListData.drinks.map { drink -> drink.toUiModel() }
+                        )
+                    }else{
+                        it.copy(
+                            nonAlcoholicCocktails = drinkListData.drinks.map { drink -> drink.toUiModel() }
+                        )
+                    }
                 }
             },
             onDataException = {
@@ -50,5 +56,6 @@ sealed class CocktailListUiEvent {
 
 data class CocktailListUiState(
     val loading: Boolean = false,
-    val cocktails: List<DrinkUiModel> = emptyList(),
+    val alcoholicCocktails: List<DrinkUiModel> = emptyList(),
+    val nonAlcoholicCocktails: List<DrinkUiModel> = emptyList(),
 )
