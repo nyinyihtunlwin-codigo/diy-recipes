@@ -28,7 +28,7 @@ class MealDetailsViewModel @Inject constructor(
             onSuccess = { data ->
                 _uiState.update {
                     it.copy(
-                        meals = data.meals.map { it.toUiModel() },
+                        meal = data.meals.map { it.toUiModel() }.firstOrNull(),
                         loading = false,
                     )
                 }
@@ -52,5 +52,5 @@ sealed class MealDetailsUiEvent {
 
 data class MealDetailsUiState(
     val loading: Boolean = false,
-    val meals: List<MealUiModel> = emptyList()
+    val meal: MealUiModel? = null
 )

@@ -5,6 +5,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import projects.nyinyihtunlwin.designsystem.theme.DiyRecipesTheme
+import projects.nyinyihtunlwin.diyrecipes.destinations.destinations.MealDetailsDestination
 import projects.nyinyihtunlwin.meals.presentation.screens.listing.MealListEvent
 import projects.nyinyihtunlwin.meals.presentation.screens.listing.MealListScreen
 
@@ -21,6 +22,10 @@ fun MealList(
                 when (it) {
                     is MealListEvent.Exit -> {
                         navigator.navigateUp()
+                    }
+
+                    is MealListEvent.Details -> {
+                        navigator.navigate(MealDetailsDestination(mealId = it.mealId))
                     }
 
                     else -> {}

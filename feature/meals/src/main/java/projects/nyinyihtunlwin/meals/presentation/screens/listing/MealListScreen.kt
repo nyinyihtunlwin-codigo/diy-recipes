@@ -66,6 +66,7 @@ fun MealListScreen(
             viewModel.getMealListByCategory(categoryName)
         },
         onMealSelected = {
+            onEvent(MealListEvent.Details(it.idMeal))
         },
         onBackPressed = {
             onEvent(MealListEvent.Exit)

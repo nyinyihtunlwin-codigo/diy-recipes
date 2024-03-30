@@ -144,8 +144,7 @@ fun DiyRecipesToolbarWithAction(
 
                 val (
                     backButton,
-                    titleText,
-                    actionButton
+                    titleText
                 ) = createRefs()
                 BackButton(
                     onBackPress = onBackPress,
