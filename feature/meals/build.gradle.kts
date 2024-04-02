@@ -61,7 +61,6 @@ dependencies {
 
     implementation(project(":core:network"))
     implementation(project(":core:common"))
-    implementation(project(":core:database"))
     implementation(project(":core:designsystem"))
 
     implementation(platform(libs.androidx.compose.bom))
