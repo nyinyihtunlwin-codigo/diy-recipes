@@ -41,12 +41,16 @@ android {
         create("staging") {
             dimension = flavorDimensions[0]
             buildConfigField("String", "BASE_MEAL_URL", "\"https://www.themealdb.com/\"")
-            buildConfigField("String", "BASE_COCKTAILS_URL", "\"https://www.thecocktaildb.com//\"")
+            buildConfigField("String", "BASE_MEAL_IMG_URL", "\"https://www.themealdb.com/images/ingredients/\"")
+            buildConfigField("String", "BASE_COCKTAILS_URL", "\"https://www.thecocktaildb.com/\"")
+            buildConfigField("String", "BASE_COCKTAILS_IMG_URL", "\"https://www.thecocktaildb.com/images/ingredients/\"")
         }
         create("prod") {
             dimension = flavorDimensions[0]
             buildConfigField("String", "BASE_MEAL_URL", "\"https://www.themealdb.com/\"")
-            buildConfigField("String", "BASE_COCKTAILS_URL", "\"https://www.thecocktaildb.com//\"")
+            buildConfigField("String", "BASE_MEAL_IMG_URL", "\"https://www.themealdb.com/images/ingredients/\"")
+            buildConfigField("String", "BASE_COCKTAILS_URL", "\"https://www.thecocktaildb.com/\"")
+            buildConfigField("String", "BASE_COCKTAILS_IMG_URL", "\"https://www.thecocktaildb.com/images/ingredients/\"")
         }
     }
     buildFeatures {
