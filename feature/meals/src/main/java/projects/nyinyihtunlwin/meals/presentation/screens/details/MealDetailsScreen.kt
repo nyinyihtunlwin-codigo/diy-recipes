@@ -124,7 +124,7 @@ fun MealDetailsContent(
                 item {
                     ExpandedTopBar(
                         onBack = onBackPressed,
-                        title = meal?.strMeal ?: stringResource(R.string.details),
+                        title = meal?.strMeal ?: "",
                         imgUrl = meal?.strMealThumb ?: "",
                         videoUrl = meal?.strYoutube ?: ""
                     )

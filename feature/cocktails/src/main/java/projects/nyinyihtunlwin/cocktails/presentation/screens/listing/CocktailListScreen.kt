@@ -64,7 +64,7 @@ fun CocktailListScreen(
     val viewModel: CocktailListViewModel = hiltViewModel()
     val uiState by viewModel.uiState.collectAsState()
 
-    LaunchedEffect(key1 = Unit){
+    LaunchedEffect(key1 = Unit) {
         viewModel.getCocktails(isAlcoholic = true)
         viewModel.getCocktails(isAlcoholic = false)
     }
@@ -77,7 +77,7 @@ fun CocktailListScreen(
             viewModel.getCocktails(isAlcoholic)
         },
         onCocktailSelected = {
-
+            onEvent(CocktailListEvent.Details(cocktailId = it.idDrink))
         }
     )
 }
