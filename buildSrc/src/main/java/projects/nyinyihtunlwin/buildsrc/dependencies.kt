@@ -3,7 +3,7 @@ package projects.nyinyihtunlwin.buildsrc
 object DiyRecipesProject {
     //Version
     const val versionName = "1.0"
-    const val versionCode = 1
+    const val versionCode = 2
 
     //Compile SDK & Build Tools
     const val compileSdk = 34
