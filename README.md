@@ -2,8 +2,8 @@
 
 Meal & Cocktail Recipes
 
-An app to explore how to cook delicious foods on your device.
-Find the popular recipes in one place with DIY Recipes app.
+An app to explore how to cook delicious food, and make cocktails..
+You can find the popular recipes in one place with this app.
 
 ### Used Technologies
 
