@@ -19,5 +19,5 @@ Find the popular recipes in one place with DIY Recipes app.
 	- Meal Recipes
 	- Cocktail Recipes (Alcoholic & Un-Alcoholic)
 
-![alt text](https://github.com/nyinyihtunlwin/diy-recipes/blob/master/app/screenshots/img_app_screens.png)
+![alt text](https://github.com/nyinyihtunlwin-codigo/diy-recipes/blob/main/app/screenshots/img_app_screens.png)
 ### [Download on Google Play Store](https://play.google.com/store/apps/details?id=projects.nyinyihtunlwin.diyrecipes)
